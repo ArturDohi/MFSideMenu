@@ -12,23 +12,23 @@
 extern NSString * const MFSideMenuStateNotificationEvent;
 
 typedef enum {
-    MFSideMenuPanModeNone = 0, // pan disabled
-    MFSideMenuPanModeCenterViewController = 1 << 0, // enable panning on the centerViewController
-    MFSideMenuPanModeSideMenu = 1 << 1, // enable panning on side menus
-    MFSideMenuPanModeDefault = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu
+  MFSideMenuPanModeNone = 0, // pan disabled
+  MFSideMenuPanModeCenterViewController = 1 << 0, // enable panning on the centerViewController
+  MFSideMenuPanModeSideMenu = 1 << 1, // enable panning on side menus
+  MFSideMenuPanModeDefault = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu
 } MFSideMenuPanMode;
 
 typedef enum {
-    MFSideMenuStateClosed, // the menu is closed
-    MFSideMenuStateLeftMenuOpen, // the left-hand menu is open
-    MFSideMenuStateRightMenuOpen // the right-hand menu is open
+  MFSideMenuStateClosed, // the menu is closed
+  MFSideMenuStateLeftMenuOpen, // the left-hand menu is open
+  MFSideMenuStateRightMenuOpen // the right-hand menu is open
 } MFSideMenuState;
 
 typedef enum {
-    MFSideMenuStateEventMenuWillOpen, // the menu is going to open
-    MFSideMenuStateEventMenuDidOpen, // the menu finished opening
-    MFSideMenuStateEventMenuWillClose, // the menu is going to close
-    MFSideMenuStateEventMenuDidClose // the menu finished closing
+  MFSideMenuStateEventMenuWillOpen, // the menu is going to open
+  MFSideMenuStateEventMenuDidOpen, // the menu finished opening
+  MFSideMenuStateEventMenuWillClose, // the menu is going to close
+  MFSideMenuStateEventMenuDidClose // the menu finished closing
 } MFSideMenuStateEvent;
 
 
@@ -70,6 +70,7 @@ typedef enum {
 - (void)setRightMenuWidth:(CGFloat)rightMenuWidth animated:(BOOL)animated;
 
 // can be used to attach a pan gesture recognizer to a custom view
-- (UIPanGestureRecognizer *)panGestureRecognizer;
+- (UIPanGestureRecognizer *)rightMenuPanGestureRecognizer;
+- (UIPanGestureRecognizer *)leftMenuPanGestureRecognizer;
 
 @end
